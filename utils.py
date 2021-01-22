@@ -61,7 +61,7 @@ def dict_to_json(dict_data, path):
         with open(path, 'w') as fp:
             json.dump(dict_data, fp)
             # sort the output
-            json.dump(dict_data, fp, sort_keys=True)
+            # json.dump(dict_data, fp, sort_keys=True)
         return True
     except Exception as error:
         logging.error(f"Error while calling dict to json: {error}")
