@@ -55,7 +55,7 @@ def dict_to_json(dict_data, path):
     Export dict to JSON
     :param dict_data: original data
     :param path: export file path
-    :return: True / False
+    :return: Boolean: True / False
     """
     try:
         with open(path, 'w') as fp:
