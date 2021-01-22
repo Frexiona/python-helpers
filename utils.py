@@ -50,6 +50,20 @@ def get_list_from_json(path):
     return data
 
 
-def list_to_json(object_list, export_file_name):
-    with open(export_file_name, 'w') as outfile:
-        json.dump(object_list, outfile)
+def dict_to_json(dict_data, path):
+    """
+    Export dict to JSON
+    :param dict_data: original data
+    :param path: export file path
+    :return: True / False
+    """
+    try:
+        with open(path, 'w') as fp:
+            json.dump(dict_data, fp)
+            # sort the output
+            json.dump(dict_data, fp, sort_keys=True)
+        return True
+    except Exception as error:
+        logging.error(f"Error while calling dict to json: {error}")
+        logging.error(traceback.format_exc())
+        return False
